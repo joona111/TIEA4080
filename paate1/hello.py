@@ -31,7 +31,8 @@ import urllib.request
 # print(func(5))
 with urllib.request.urlopen('https://appro.mit.jyu.fi/ties4080/ohjaus/ohjaus1/malli.json') as response:
    data = json.load(response)
-
+with open("tietorakenne.json",'w',encoding = 'utf-8') as f:
+    f.write(json.dumps(data))
 
 for donut in data["items"]["item"]:
     print (donut["name"])
